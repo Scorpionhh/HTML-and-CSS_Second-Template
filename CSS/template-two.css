@@ -1,0 +1,1002 @@
+/* Global Rules Start */
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+:root {
+    --maincolor: #19c8fa;
+    --transparentcolor: rgb(15 116 143 / 70%);
+    --sectionpadding: 100px;
+    --descriptiontext: #777;
+    --overlycolor: rgba(0, 0, 0, 0.4);
+}
+body {
+    font-family: "Open Sans", sans-serif;
+}
+html {
+    scroll-behavior: smooth;
+}
+.container {
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+}
+ul {
+    list-style: none;
+}
+/* small screens */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+/* small screens */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+/* large screens */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
+/* Global Rules End */
+/* Start Heading */
+.main-heading {
+    text-align: center;
+}
+.main-heading h2 {
+    text-transform: uppercase;
+    font-size: 40px;
+    margin-bottom: 80px;
+    font-weight: normal;
+    position: relative;    
+}
+.main-heading h2::before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 120px;
+    background-color: #333;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -30px;
+}
+.main-heading h2::after {
+    content: "";
+    position: absolute;
+    height: 16px;
+    width: 16px;
+    background-color: white;
+    border: 2px solid #333;
+    border-radius: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -38px;
+}
+.main-heading p {
+    width: 500px;
+    margin: 0 auto 100px;
+    color: var(--descriptiontext);
+    max-width: 100%;
+    line-height: 2;
+}
+
+/* End Heading */
+/* Start Header */
+header {
+    position: absolute;
+    z-index: 2;
+    width: 100%;
+}
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+}
+header .container::after {
+    content: "";
+    background-color: azure;
+    position: absolute;
+    height: 1px;
+    width: calc(100% - 30px);
+    bottom: 0;
+    left: 15px;
+    z-index: -1;
+}
+header .container a.logo img {
+    height: 40px;
+}
+header .container nav {
+    flex: 1;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    min-height: 99.51px;
+}
+header .container nav i.toggle-menu {
+    color: white;
+    font-size: 20px;
+}
+@media (min-width:768px) {
+    header .container nav i.toggle-menu {
+        display: none;
+    }
+}
+header .container nav i.toggle-menu:hover + ul {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background-color: var(--transparentcolor);
+}
+header .container nav i.toggle-menu:hover + ul li a {
+    padding: 15px;
+}
+header .container nav ul {
+    display: flex;
+    justify-content: flex-end;
+}
+@media (max-width:767.9px) {
+    header .container nav ul {
+        display: none;
+    }
+}
+header .container nav ul li a {
+    text-decoration: none;
+    color: white;
+    display: block;
+    padding: 40px 10px;
+    transition: 0.3s;
+}
+header .container nav ul li a:hover {
+    color: var(--maincolor);
+    border-bottom: solid 1px var(--maincolor);
+}
+
+.active {
+    color: var(--maincolor) !important;
+    border-bottom: solid 1px var(--maincolor);
+}
+header .container nav .form {
+    margin-left: 30px;
+    position: relative;
+    border-left: solid 1px white;
+    width: 40px;
+    height: 30px;
+}
+
+header .container nav .form i {
+    position: absolute;
+    color: white;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+}
+/* End Header */
+
+/* Start Landing */
+div.landing {
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: 100vh;
+    background-color: #1f2021;
+    position: relative;
+}
+div.landing .overly {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    top: 0;
+    left: 0;
+}
+div.landing .text {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    width: 50%;
+    background-color: var(--transparentcolor);
+    padding: 50px;
+    color: white;
+    display: flex;
+    justify-content: flex-end;
+}
+div.landing .text .content {
+    max-width: 500px;
+}
+@media (max-width:767.9px) {
+    div.landing .text .content {
+        max-width: 100%;
+    }
+    div.landing .text {
+        width: 100%;
+    }
+}
+div.landing .text .content h2 {
+    font-size: 32px;
+    font-weight: normal;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+div.landing .text .content p {
+    font-size: 14px;
+    line-height: 2;
+}
+
+div.landing  i.left,i.right {
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%,-50%);
+    font-size: 2em;
+    font-weight: 900;
+}
+div.landing i.left {
+    left: 30px;
+}
+div.landing i.right {
+    right: 30px;
+}
+@media (max-width:767.9px) {
+    i.left,i.right {
+        display: none;
+    }
+}
+ul.dottes {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 30px;
+}
+ul.dottes li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid white;
+    margin: 5px;
+}
+ul.dottes li.active {
+    background-color: var(--maincolor);
+    border-color: var(--maincolor);
+}
+/* End Landing */
+
+/* Start Services */
+section.services {
+    padding: var(--sectionpadding) 0;
+}
+@media (min-width:768px) {
+    section.services div.services-content {
+        display: grid;
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+        gap: 60px 40px;
+    }   
+}
+section.services div.services-content  .srv {
+    display: flex;
+}
+section.services div.services-content  .srv i {
+    margin-right: 50px;
+}
+section.services div.services-content  .srv .text h3 {
+    color: var(--maincolor);
+    margin-bottom: 30px;
+}
+section.services div.services-content  .srv .text p {
+    color: var(--descriptiontext);
+    line-height: 2;
+}
+@media (max-width:767.9px) {
+    section.services div.services-content  .srv {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        margin-bottom: 40px;
+        
+    }
+    section.services div.services-content  .srv i {
+        margin: 0 0 40px;
+    }
+}
+/* End Services */
+
+/* Start Design Section */
+section.design {
+    padding: var(--sectionpadding) 0;
+    background-image: url(../images/design-features.jpg);
+    background-size: cover;
+    position: relative;
+    height: 600px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: #1f2021;
+}
+section.design::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: var(--overlycolor);
+    width: 100%;
+    height: 100%;
+}
+section.design .image, section.design .text {
+    flex: 1;
+    position: relative;
+    z-index: 2;
+}
+section.design .image {
+    text-align: center;
+}
+@media (max-width:767.9px) {
+    section.design .image {
+        display: none;
+    }
+}
+section.design .image img {
+    position: relative;
+    bottom: -150px;
+}
+section.design .text {
+    background: var(--transparentcolor);
+    padding: 50px;
+    color: white;    
+}
+section.design .text h2 {
+    font-weight: normal;
+    margin-bottom: 40px;
+}
+section.design .text ul li {
+    padding: 15px 0;
+}
+/* 
+if you want to add an icon using the psuedo element to these steps
+font familt = font awesome (your version ) free 
+content = the icon unicode
+font weghit = 900
+ */
+section.design .text ul li::before {
+    font-family: "Font Awesome 6 Free";
+    content: "\e163";
+    font-weight: 900;
+    margin-right: 20px;
+    position: relative;
+    top: 1px;   
+}
+/* End Design Section */
+
+/* Start Portfolio Section */
+section.portfolio {
+    padding: var(--sectionpadding) 0;
+
+}
+section.portfolio .portfolio-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+section.portfolio .portfolio-content ul.categories {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+section.portfolio .portfolio-content ul.categories li {
+    padding: 10px;
+}
+section.portfolio .portfolio-content ul.categories li a {
+    text-decoration: none;
+    color: black;
+    display: block;
+}
+section.portfolio .portfolio-content ul.categories li.all,
+section.portfolio .portfolio-content ul.categories li.all a {
+    background-color: var(--maincolor);
+    color: white;
+}
+section.portfolio .portfolio-content div.pictures {
+    display: flex;
+    flex-wrap: wrap;
+}
+section.portfolio .portfolio-content div.pictures div.box {
+    position: relative;
+    overflow: hidden;
+}
+@media (min-width:768px) {
+    section.portfolio .portfolio-content div.pictures div.box {
+        flex-basis: 50%;
+    }
+}
+@media (min-width:1200px) {
+    section.portfolio .portfolio-content div.pictures div.box {
+        flex-basis: 25%;
+    }
+}
+section.portfolio .portfolio-content div.pictures div.box img {
+    width: 100%;
+    transition: 0.3s;
+}
+section.portfolio .portfolio-content div.pictures div.box:hover img {
+    transform: scale(1.1) skewY(5deg);
+}
+section.portfolio .portfolio-content div.pictures div.box div.image-caption {
+    width: 100%;
+    position: absolute;
+    background-color: white;
+    padding: 20px;
+    transition: 0.3s;
+    left: 0;
+    bottom: -100%;
+}
+section.portfolio .portfolio-content div.pictures div.box:hover div.image-caption {
+    bottom: 0;
+}
+section.portfolio .portfolio-content div.pictures div.box div.image-caption h4 {
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+section.portfolio .portfolio-content div.pictures div.box div.image-caption p {
+    color: var(--maincolor);
+}
+section.portfolio .portfolio-content div.more  {
+    margin-top: 50px;
+    background-color: var(--maincolor);
+}
+section.portfolio .portfolio-content div.more a {
+    text-decoration: none;
+    text-transform: uppercase;
+    color: white;
+    display: block;
+    padding: 15px 20px;
+}
+/* End Portfolio Section */
+
+/* Start Video Section */
+
+div.video {
+    position: relative;
+}
+div.video::before {
+    position: absolute;
+    content: "";
+    background-color: var(--overlycolor);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+div.video video {
+    width: 100%;
+}
+div.video .text {
+    position: absolute;
+    width: 100%;
+    background-color: var(--transparentcolor);
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 50px;
+    text-align: center;
+    color: white;
+}
+div.video .text h2 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+div.video .text p {
+    margin-bottom: 30px;
+}
+
+div.video .text button {
+    background-color: black;
+    padding: 10px 15px;
+    border: none;
+    color: white;
+    text-transform: uppercase;
+} 
+/* End Video Section*/
+
+/* Start Abouit Section*/
+section.about {
+    padding-top: var(--sectionpadding) ;
+    text-align: center;
+    overflow: hidden;
+}
+section.about img {
+   position: relative; 
+   bottom: -120px;
+   margin-top: -120px;
+   max-width: 100%;
+}
+@media (max-width:767.9px) {
+    section.about img {
+        bottom: -60px;
+        margin-top: -60px;
+    }   
+}
+div.states {
+    background-image: url(../images/stats.png);
+    background-size: cover;
+    background-color: #1f2021;
+    position: relative;
+    text-align: center;
+    padding: var(--sectionpadding) 0;
+}
+div.states::before {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+div.states .container {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+}
+div.states .container .result {
+    padding: 50px;
+    color: white;
+    background-color: var(--transparentcolor);
+}
+@media (min-width:992px) {
+    div.states .container .result {
+        flex-basis: 25%;
+    }
+}
+@media (max-width:991.9px) {
+    div.states .container .result {
+        flex-basis: 50%;
+    }
+}
+@media (max-width:767.9px) {
+    div.states .container .result {
+        flex-basis: 100%;
+    }
+}
+div.states .container .result i {
+    margin:0 auto 30px;
+    background-color: black;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+div.states .container .result div {
+    font-size: 50px;
+    font-weight: bold;
+    margin: 0 0 20px;
+}
+/* End Abouit Section*/
+
+/* Start TestMonials And Skills Section*/
+section.testmonials-and-skills {
+    padding: var(--sectionpadding) 0;
+}
+section.testmonials-and-skills .container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+@media (min-width:992px) {
+    section.testmonials-and-skills .container .testmonials,
+    section.testmonials-and-skills .container .skills {
+        flex-basis: 45%;
+    }
+}
+section.testmonials-and-skills .container .testmonials .main-heading h2,
+section.testmonials-and-skills .container .skills .main-heading h2 {
+    font-size: 1.17em;
+    font-weight: normal;
+    margin-bottom: 30px;
+}
+section.testmonials-and-skills .container .testmonials .main-heading p,
+section.testmonials-and-skills .container .skills .main-heading p {
+    width: 100%;
+    margin: 0 0 60px;
+}
+section.testmonials-and-skills .container .testmonials .main-heading h2::before,
+section.testmonials-and-skills .container .testmonials .main-heading h2::after,
+section.testmonials-and-skills .container .skills .main-heading h2::before, 
+section.testmonials-and-skills .container .skills .main-heading h2::after {
+    display: none;
+}
+.testmonials-and-skills .container .testmonials .candidates .candidate {
+    display: flex;
+    align-items: center;
+    margin-bottom: 50px;
+}
+@media (max-width:767.9px) {
+    .testmonials-and-skills .container .testmonials .candidates .candidate {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+    }
+}
+.testmonials-and-skills .container .testmonials .candidates .candidate  img {
+    width: 100px;
+    margin-right: 50px;
+    border-radius: 50%;
+}
+@media (max-width:767.9px) {
+    .testmonials-and-skills .container .testmonials .candidates .candidate  img {
+        margin: auto;
+    }
+}
+.testmonials-and-skills .container .testmonials .candidates .candidate .promises {
+    border-bottom: 1px #ccc solid;
+}
+.testmonials-and-skills .container .testmonials .candidates .candidate .promises .text {
+    line-height: 1.8;
+}
+.testmonials-and-skills .container .testmonials .candidates .candidate .promises .title {
+    text-align: right;
+    color: #777;
+    margin-bottom: 30px;
+}
+.testmonials-and-skills .container .testmonials ul.bullets {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin: 50px 0;
+}
+.testmonials-and-skills .container .testmonials ul.bullets li {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px black solid;
+}
+.testmonials-and-skills .container .testmonials ul.bullets li.active {
+    background-color: var(--maincolor);
+    border-color: var(--maincolor);
+}
+.testmonials-and-skills .container .skills-results .state {
+    margin-bottom: 40px;
+}
+.testmonials-and-skills .container .skills-results .state h3 {
+    font-weight: normal;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+}
+.testmonials-and-skills .container .skills-results .state  .bar {
+    background-color: #dedadc;
+    height: 40px;
+}
+.testmonials-and-skills .container .skills-results .state .bar .percentage {
+    height: 100%;
+    background-color: var(--maincolor);
+    position: relative;
+}
+.testmonials-and-skills .container .skills-results .state .bar .percentage span {
+    position: absolute;
+    background-color: black;
+    color: white;
+    height: 30px;
+    width: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 4px;
+    right: -25px;
+    top: -50px;
+}
+.testmonials-and-skills .container .skills-results .state .bar .percentage span::before {
+    position: absolute;
+    content: "";
+    border: 10px solid;
+    bottom: -20px;
+    border-color: black transparent transparent transparent;
+}
+/* End TestMonials And Skills Section*/
+/* Start Quote Section*/
+div.quote {
+    padding: var(--sectionpadding) 0;
+    background-image: url(../images/quote.jpg);
+    background-size: cover;
+    background-color: #1f2021;
+    position: relative;
+    text-align: center;
+    color: white;
+}
+div.quote::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+div.quote .container {
+    position: relative;
+}
+div.quote .container q {
+    font-size: 30px;
+    margin-bottom: 20px;
+    display: block;
+}
+/* End Quote Section*/
+/* Start Pricing Section */
+section.pricing {
+    padding: var(--sectionpadding) 0;
+}
+section.pricing .container .subscription-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+    gap: 30px;
+}
+section.pricing .container .subscription-options .price {
+    background-color: #fcfcfc;
+    text-align: center;
+}
+section.pricing .container .subscription-options .price .value {
+    border-bottom: 1px solid var(--maincolor);
+    border-top: 1px solid var(--maincolor);
+    padding: 30px 15px;
+}
+section.pricing .container .subscription-options .price .value h3 {
+    font-weight: normal;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+}
+section.pricing .container .subscription-options .price .value span {
+    font-size: 60px;
+    font-weight: bold;
+    position: relative;
+}
+section.pricing .container .subscription-options .price .value span sup {
+    font-size: 25px;
+    position: absolute;
+    font-weight: normal;
+    left: -25px;
+    top: 15px;
+}
+section.pricing .container .subscription-options .price .value span sub {
+    font-size: 20px;
+    position: absolute;
+    bottom: 25px;
+    right: -50px;
+}
+section.pricing .container .subscription-options .price .features {
+    border-bottom:  1px solid var(--maincolor);
+}
+section.pricing .container .subscription-options .price .features div {
+    padding: 20px;
+    position: relative;
+}
+section.pricing .container .subscription-options .price .features div:not(:last-child)::after {
+    position: absolute;
+    content: "";
+    width: 50%;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 0;
+    border-bottom: 1px solid var(--maincolor);
+}
+section.pricing .container .subscription-options .price .buynow {
+    margin: 30px auto;
+    border: 1px solid var(--maincolor);
+    width: 50%;
+}
+section.pricing .container .subscription-options .price .buynow a {
+    text-decoration: none;
+    display: block;
+    padding: 20px;
+}
+section.pricing .container .special-requests {
+    margin-top: 70px;
+    text-align: center;
+}
+section.pricing .container .special-requests p {
+    margin-bottom: 20px;
+    font-size: 20px;
+}
+section.pricing .container .special-requests span  {
+    background-color: var(--maincolor);
+    display: inline-block;
+}
+section.pricing .container .special-requests span a {
+    text-decoration: none;
+    color: white;
+    display: inline-block;
+    width: 100%;
+    padding: 10px 30px;
+}
+/* End Pricing Section */
+/* Start Subscribe Section */
+div.subscribe {
+    position: relative;
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    background-color: #1f2021;
+    padding: var(--sectionpadding) 0;
+}
+div.subscribe::before {
+    position: absolute;
+    content: "";
+    background-color: rgba(0, 0, 0, 0.6);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+div.subscribe .container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+@media (max-width:991.9px) {
+    div.subscribe .container {
+        flex-direction: column;
+    }
+    div.subscribe .container p {
+        margin-top: 30px;
+    }
+}
+div.subscribe .container form {
+    display: flex;
+    width: 500px;
+    max-width: 100%;
+    position: relative;
+}
+div.subscribe .container form i {
+    font-size: 1.3em;
+    color: white;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 25px;
+}
+div.subscribe .container form input[type="email"] {
+    border: 1px solid white;
+    border-right: none;
+    outline: none;
+    background: none;
+    border-radius: 0;
+    width: calc(100% - 130px);
+    padding: 20px 20px 20px 60px;
+    caret-color: var(--maincolor);
+    color: white;
+}
+div.subscribe .container form input[type="email"]::placeholder {
+    color: white;
+}
+div.subscribe .container form input[type="submit"] {
+    width: 130px;
+    background-color: var(--maincolor);
+    text-transform: uppercase;
+    color: white;
+    border: 1px solid white;
+    border-left: none;
+}
+div.subscribe .container p {
+    color: white;
+    line-height: 1.8;
+    margin-left: 50px;
+}
+/* End Subscribe Section */
+
+/* Start Contact Us Section */
+section.contact-us {
+    padding: var(--sectionpadding) 0;
+}
+section.contact-us .container .reviews {
+    display: flex;
+    justify-content: space-between;
+}
+section.contact-us .container .reviews form {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 70%;
+}
+section.contact-us .container .reviews form .main-input {
+    border: 1px solid #ccc;
+    outline: none;
+    margin-bottom: 30px;
+    padding: 20px;
+    width: 100%;
+}
+section.contact-us .container .reviews form textarea {
+    height: 200px;
+}
+section.contact-us .container .reviews form [type="submit"] {
+    display: flex;
+    padding: 20px;
+    margin: 0 0 0 auto;
+    border: none;
+    background-color: var(--maincolor);
+    color: white;
+    text-transform: uppercase;
+    cursor: pointer;
+}
+section.contact-us .container .reviews .contact-information {
+    flex-basis: 25%;
+}
+section.contact-us .container .reviews .contact-information div:nth-child(2) {
+    margin-top: 90px;
+}
+section.contact-us .container .reviews .contact-information div h3 {
+    text-transform: uppercase;
+    margin-bottom: 30px;
+    font-weight: 500;
+    font-size: 18px;
+}
+section.contact-us .container .reviews .contact-information div p {
+    margin-bottom: 15px;
+    color: #777;
+}
+@media (max-width:767.9px) {
+    section.contact-us .container .reviews {
+        flex-wrap: wrap-reverse;
+        justify-content: center;
+    }
+    section.contact-us .container .reviews form {
+        flex-basis: 100%;
+    }
+    section.contact-us .container .reviews .contact-information {
+        text-align: center;
+        flex-basis: 100%;
+    }
+    section.contact-us .container .reviews .contact-information div:nth-child(2) {
+        margin-top: 30px;
+    }
+}
+/* End Contact Us Section */
+/* Start Footer */
+footer {
+    background-color: #1f2021;
+    background-image: url(../images/subscribe.jpg);
+    background-size: cover;
+    position: relative;
+    padding: 50px 0;
+}
+footer::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+footer .container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+footer .container div {
+    margin: 50px 0 60px;
+}
+footer .container div h3 {
+    padding: 20px;
+    margin: auto auto 20px;
+    width: fit-content;
+    border-bottom: 1px white solid;
+    text-transform: uppercase;
+    font-weight: normal;
+    font-size: 22px;
+}
+footer .container div i {
+    padding: 10px 15px;
+}
+footer .container p span {
+    font-weight: bold;
+    color: var(--maincolor);
+}
+/* End Footer */
