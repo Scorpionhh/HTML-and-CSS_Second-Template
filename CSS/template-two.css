@@ -622,17 +622,17 @@ section.testmonials-and-skills .container .skills .main-heading h2::after {
     align-items: center;
     margin-bottom: 50px;
 }
+.testmonials-and-skills .container .testmonials .candidates .candidate  img {
+    width: 100px;
+    margin-right: 50px;
+    border-radius: 50%;
+}
 @media (max-width:767.9px) {
     .testmonials-and-skills .container .testmonials .candidates .candidate {
         flex-direction: column;
         text-align: center;
         gap: 20px;
     }
-}
-.testmonials-and-skills .container .testmonials .candidates .candidate  img {
-    width: 100px;
-    margin-right: 50px;
-    border-radius: 50%;
 }
 @media (max-width:767.9px) {
     .testmonials-and-skills .container .testmonials .candidates .candidate  img {
@@ -687,20 +687,20 @@ section.testmonials-and-skills .container .skills .main-heading h2::after {
     position: absolute;
     background-color: black;
     color: white;
-    height: 30px;
-    width: 50px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    padding: 5px 0;
+    width: 40px;
+    text-align: center;
     border-radius: 4px;
-    right: -25px;
+    right: -20px;
     top: -50px;
 }
 .testmonials-and-skills .container .skills-results .state .bar .percentage span::before {
     position: absolute;
     content: "";
     border: 10px solid;
-    bottom: -20px;
+    bottom: -19px;
+    transform: translateX(-50%);
+    left: 50%;
     border-color: black transparent transparent transparent;
 }
 /* End TestMonials And Skills Section*/
@@ -800,23 +800,20 @@ section.pricing .container .subscription-options .price .buynow a {
     padding: 20px;
 }
 section.pricing .container .special-requests {
-    margin-top: 70px;
     text-align: center;
+    margin: 50px 0 0;
 }
 section.pricing .container .special-requests p {
-    margin-bottom: 20px;
-    font-size: 20px;
+    margin-bottom: 30px;
 }
-section.pricing .container .special-requests span  {
+section.pricing .container .special-requests a {
+    display: block;
+    width: fit-content;
+    padding: 10px 20px;
     background-color: var(--maincolor);
-    display: inline-block;
-}
-section.pricing .container .special-requests span a {
-    text-decoration: none;
+    margin: auto;
     color: white;
-    display: inline-block;
-    width: 100%;
-    padding: 10px 30px;
+    text-decoration: none;
 }
 /* End Pricing Section */
 /* Start Subscribe Section */
@@ -840,6 +837,7 @@ div.subscribe .container {
     position: relative;
     display: flex;
     align-items: center;
+    color: white;
 }
 @media (max-width:991.9px) {
     div.subscribe .container {
@@ -857,7 +855,6 @@ div.subscribe .container form {
 }
 div.subscribe .container form i {
     font-size: 1.3em;
-    color: white;
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
@@ -879,14 +876,13 @@ div.subscribe .container form input[type="email"]::placeholder {
 }
 div.subscribe .container form input[type="submit"] {
     width: 130px;
+    color: white;
     background-color: var(--maincolor);
     text-transform: uppercase;
-    color: white;
     border: 1px solid white;
     border-left: none;
 }
 div.subscribe .container p {
-    color: white;
     line-height: 1.8;
     margin-left: 50px;
 }
@@ -941,6 +937,10 @@ section.contact-us .container .reviews .contact-information div p {
     margin-bottom: 15px;
     color: #777;
 }
+section.contact-us .container .reviews .contact-information div address {
+    color: #777;
+    line-height: 2;
+} 
 @media (max-width:767.9px) {
     section.contact-us .container .reviews {
         flex-wrap: wrap-reverse;
@@ -952,6 +952,7 @@ section.contact-us .container .reviews .contact-information div p {
     section.contact-us .container .reviews .contact-information {
         text-align: center;
         flex-basis: 100%;
+        margin-bottom: 30px;
     }
     section.contact-us .container .reviews .contact-information div:nth-child(2) {
         margin-top: 30px;
@@ -964,7 +965,7 @@ footer {
     background-image: url(../images/subscribe.jpg);
     background-size: cover;
     position: relative;
-    padding: 50px 0;
+    padding: calc(var(--sectionpadding) /2 ) 0;
 }
 footer::before {
     content: "";
